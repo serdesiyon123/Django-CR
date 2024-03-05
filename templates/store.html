@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>store</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'list.css'%}">
+</head>
+<body>
+<p>This is the store page
+</p>
+<p> {{store.name}}</p>
+<p> {{store.age}}</p>
+<p> {{store.email}}</p>
+<p> {{store.bio}}</p>
+<img src={{store.image.url}}/>
+<p>{{store.image}}</p>
+
+</body>
+</html>

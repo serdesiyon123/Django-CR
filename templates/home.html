@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <h1>Name: {{  form.name }}</h1>
+  <h1>Age: {{ form.age }}</h1>
+  <h1>Email:{{ form.email }}</h1>
+   <h1>Image:{{  form.image}}</h1>
+   <h1>Bio: {{  form.bio}}</h1>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'list.css' %}">
+
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+
+    {% for li in li %}
+  <p> Name: {{ li.name}}</p>
+    <p> Age: {{ li.age}} </p>
+  <p> Email:  {{ li.email}}</p>
+  <p> Bio: {{ li.bio}}</p>
+
+    <img src="{{ li.image.url }}" alt="{{ li.id }}" >
+{% endfor %}
+
+
+
+
+
+</body>
+</html>
