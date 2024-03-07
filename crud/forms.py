@@ -3,11 +3,11 @@ from django.forms import ModelForm
 from .models import DB
 
 class viewForm(ModelForm):
-    name = forms.CharField(max_length=255, label='Fullname')
-    age = forms.IntegerField( label='Age')
-    email = forms.EmailField( label='E-mail')
-    Bio = forms.TextInput()
-    image = forms.ImageField(label='Image')
+    name = forms.CharField(max_length=255, )
+    age = forms.IntegerField( )
+    email = forms.EmailField( )
+    bio = forms.TextInput()
+    image = forms.ImageField()
 
 
     class Meta:
