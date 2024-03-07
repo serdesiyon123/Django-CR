@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, Http404
+from django.contrib.auth.decorators import login_required
+from django.http import  Http404
 from .forms import viewForm
 from .models import DB
 
-
+@login_required(login_url='/login')
 def home(request):
     if request.method == 'GET':
         form = viewForm()
