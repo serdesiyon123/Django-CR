@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>This is the login page</title>
+    <link rel="stylesheet" href="{% static 'auth.css'%}">
+<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+{% load widget_tweaks %}
+
+
+<main>
+  <section class="container">
+
+
+
+    <div class="register">
+      <i class="fas fa-user-circle"></i>
+      <strong>Create account!</strong>
+      <form method="post">
+        {% csrf_token%}
+        <fieldset>
+          <div class="form">
+            <div class="form-row">
+              <i class="fas fa-user"></i>
+              <label class="form-label" for="{{form.name.id_for_label}}" >Name</label>
+            {{ form.username|attr:"placeholder:enter your username"|add_class:"form-text" }}
+            </div>
+            <div class="form-row">
+              <i class="fas fa-envelope"></i>
+              <label class="form-label" for="{{form.email.id_for_label}}">E-mail</label>
+            {{ form.email |attr:"placeholder:enter your email"|add_class:"form-text" }}
+            </div>
+            <div class="form-row">
+              <i class="fas fa-lock"></i>
+              <label class="form-label" for="{{form.password.id_for_labels}}">Password</label>
+
+            {{form.password1|attr:"placeholder:enter your password"|add_class:"form-text"}}
+            </div><div class="form-row">
+              <i class="fas fa-lock"></i>
+              <label class="form-label" for="{{form.password.id_for_labels}}">Password</label>
+
+            {{form.password2|attr:"placeholder:enter your password again"|add_class:"form-text"}}
+            </div>
+            <div class="form-row button-login">
+              <button class="btn btn-login" type="submit">Create <i class="fas fa-arrow-right"></i></button>
+            </div>
+              <div class="form-row button-login">
+              <button class="btn btn-login" type="submit"> Have <a href="/login">Account</a>  <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+
+    </div>
+  </section>
+</main>
+
+
+
+
+</body>
+</html>
