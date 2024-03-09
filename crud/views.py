@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login,logout
 from django.contrib.auth.decorators import login_required
 from django.http import  Http404
 from .forms import viewForm
@@ -20,8 +21,15 @@ def home(request):
 
 
 def list(request):
-    li = DB.objects.all()
+    if request.method == 'POST':
 
+       post_id = request.POST.get('post_id')
+       post = DB.objects.filter(id=post_id).first()
+       if post and post.name == request.user:
+          post.delete()
+
+
+    li = DB.objects.all()
     return render(request,'list.html', {'li': li})
 
 
@@ -31,3 +39,5 @@ def all(request, store_id):
         return render(request, 'store.html', {'store': store})
     else:
         raise Http404("Page does not exist")
+
+

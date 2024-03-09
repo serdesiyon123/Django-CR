@@ -12,6 +12,10 @@
 	 padding: 0;
 	 margin: 0;
 }
+ a {
+	 text-underline: white;
+	 text-underline-mode: off;
+ }
  .container {
 	 align-items: center;
 	 display: flex;

@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import UserRegister
 from django.contrib.auth import login, logout,authenticate
 
-
 import logging
 
 logger = logging.getLogger(__name__)
@@ -19,6 +18,18 @@ def signup_form(request):
     elif request.method == 'GET':
         form = UserRegister()
     return render(request, 'registration/signup.html', {'form': form})
+
+
+def log_out(request):
+    logout(request)
+    return redirect('/login')
+
+
+
+
+
+
+
 # def login_form(request):
 #     if request.method == 'POST':
 #        form = UserRegister(request.POST)
@@ -33,6 +44,7 @@ def signup_form(request):
 #
 #
 #     return render(request,'auth/login.html', {'form': form })
+
 
 
 def redirect_login(request):

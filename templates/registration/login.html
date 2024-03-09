@@ -28,19 +28,18 @@
             <div class="form-row">
               <i class="fas fa-user"></i>
               <label class="form-label" for="input" >Name</label>
-{{ form }}
-{#                 {{form.username|attr:"placeholder:enter your name"|add_class:"form-text"}}#}
+                 {{form.username|attr:"placeholder:enter your name"|add_class:"form-text"}}
             </div>
             <div class="form-row">
               <i class="fas fa-eye"></i>
               <label class="form-label" for="input">Password</label>
-                 {{form.password1|attr:"placeholder:enter your password"|add_class:"form-text"}}
+                 {{form.password|attr:"placeholder:enter your password"|add_class:"form-text"}}
             </div>
             <div class="form-row bottom">
 
-                <a href="/signup"> >Don't have account?</a>
+                <a  class="focus forgot" href="/signup"> >Don't have account?</a>
 
-              <a href="" class="forgot">forgot password?</a>
+              <a href="/password_reset" class="forgot">forgot password?</a>
             </div>
             <div class="form-row button-login">
               <button class="btn btn-login" type="submit">Sign in <i class="fas fa-arrow-right"></i></button>
